@@ -11,12 +11,13 @@ function doPost(e) {
     if (!message) return;
 
     const chatId = message.chat.id;
+    const firstName = message.from.first_name || "";
     const userId = message.from.id;
     const chatType = message.chat.type;
 
     if (chatType == "group" || chatType == "supergroup") {
       if (!ALLOWED_GROUPS.includes(chatId)) {
-        sendText(chatId, `⚠️ Lu siapa.. ko nambahin gw tanpa ijin\n\n<pre>${chatId}</pre>`);
+        sendText(chatId, `⚠️ Sorry, I haven't been authorized to join this group. Leaving now...\n\nYour Group ID: <pre>${chatId}</pre>`);
         leaveChat(chatId);
         return;
       }
@@ -24,26 +25,26 @@ function doPost(e) {
 
     if (message.photo) {
       const fileId = message.photo[message.photo.length - 1].file_id;
-      const tempMsg = sendText(chatId, "<i>⏳ Tungguin la wee...</i>", message.message_id);
+      const tempMsg = sendText(chatId, "<i>⏳ Please wait a moment... Processing your image</i>", message.message_id);
       const tempMsgId = JSON.parse(tempMsg.getContentText()).result.message_id;
       const result = processOCR(fileId);
 
-      sendText(chatId, "<b>Nih ya (Ketuk aja utk salin):</b>\n\n<pre>" + result + "</pre>", message.message_id);
+      sendText(chatId, "<b>Here is the result (Tap to copy):</b>\n\n<pre>" + result + "</pre>", message.message_id);
 
       deleteMessage(chatId, tempMsgId);
     } else if (message.text) {
       const textInput = message.text.toLowerCase().trim();
 
       if (textInput == "/start" && chatId == ADMIN || userId == ADMIN) {
-        sendText(chatId, `HAI TUAN PEMBASMI TIKUS!\n\n${getWebhookInfo()}\n<pre>${VER}</pre>`);
+        sendText(chatId, `Hi Admin!\n\n${getWebhookInfo()}\n<pre>${VER}</pre>`);
 
       } else if (textInput == "/start") {
-        sendText(chatId, "Hai WNI! \nIni bot OCR gambar, gambarnya ga disimpen jadi aman.\nPake aja gratis. tapi jangan masukin ke grub ya!!");
+        sendText(chatId, `Hi ${firstName}!\nI'm an OCR Bot. I will extract text from your images.\nYour privacy is safe as no images are stored on our servers.\nFeel free to use it for free, but please note: this bot is for private use only and cannot be added to groups.`);
       }
     }
 
   } catch (err) {
-    sendText(ADMIN, `Ada Error, <b>${err.message}</b>\n\n${err.stack}`);
+    sendText(ADMIN, `System Alert, <b>${err.message}</b>\n\n${err.stack}`);
   }
   return
 }
