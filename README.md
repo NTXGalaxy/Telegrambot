@@ -44,9 +44,11 @@ A lightweight, **100% free**, and serverless Telegram bot that extracts text fro
    - `ADMIN`: Your Telegram User ID (Get it from [@userinfobot](https://t.me/userinfobot)).
    - `ALLOWED_GROUPS`: List of authorized Group IDs (e.g., `[-100123456]`).
 
-### 3. Enable Services
+### 3. Enable Services & Authorization
 1. Click the **+** (Plus) icon next to **Services** on the left sidebar.
-2. Find and add the **Drive API**. This is mandatory for the OCR engine to function.
+2. Find and add the **Drive API** (Select **v3**).
+3. **Crucial Step:** To grant the script permission to access your Drive, select the `triggerDrivePermissions` function from the top toolbar in the editor and click **Run**. 
+4. Follow the Google authorization prompts (Click *Advanced > Go to [Project Name] (unsafe)* if warned).
 
 ### 4. Deployment
 1. Click **Deploy** > **New Deployment**.
@@ -74,7 +76,7 @@ A lightweight, **100% free**, and serverless Telegram bot that extracts text fro
 | **Format** | Currently supports Images only (JPEG, PNG, WebP) |
 
 > [!TIP]
-> For complex layouts or handwriting, ensure the photo is well-lit and taken from a top-down angle for better results.
+> If the bot stops responding, check the **Executions** tab in Apps Script to see if there are any "Permission Denied" errors. Running `triggerDrivePermissions` again usually fixes this.
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to fork this repository, open an issue, or submit a pull request.
