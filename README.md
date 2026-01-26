@@ -44,46 +44,70 @@ For better accuracy (especially handwriting), consider upgrading to **Google Clo
 - Telegram Account
 - ~10–15 minutes setup time
 
-## Quick Setup (Step-by-Step)
+# 🤖 Telegram OCR Bot (Google Apps Script)
 
-### 1. Create Telegram Bot & Get Token
+A lightweight, serverless Telegram Bot that extracts text from images (OCR) using Google Apps Script and the Google Drive API. This bot is 100% free to host and easy to deploy.
 
-1. Open Telegram → search **@BotFather**
-2. Send command: `/newbot`
-3. Choose bot name & username (must end with `bot`)
-4. Copy the **BOT_TOKEN** (format: `123456:ABC-DEF...`)
-5. Get your own Telegram numeric ID:
-   - Talk to **@userinfobot** or **@RawDataBot** → copy the `id` value
+## 📌 Features
+- **Fast OCR:** Converts images to text in seconds using Google's OCR engine.
+- **Serverless:** Hosted on Google Apps Script (no server maintenance required).
+- **Group Security:** Includes a whitelist system to prevent unauthorized group usage.
+- **Clean UI:** Uses HTML formatting for better readability in Telegram.
+- **Auto-Cleanup:** Temporary files created during the OCR process are automatically deleted.
 
-### 2. Create Google Apps Script Project
+## 🛠️ Architecture
+The bot works by receiving an image via a Webhook, downloading it to a temporary Google Doc to perform OCR, extracting the text, and sending it back to the user.
 
-1. Go to: https://script.google.com
-2. Click **New project**
-3. Delete default `Code.gs` file
-4. Create **three new files**:
 
+
+## 🚀 Setup Instructions
+
+### 1. Create a Telegram Bot
+1. Message [@BotFather](https://t.me/botfather) on Telegram.
+2. Create a new bot using `/newbot` and save your **API Token**.
+
+### 2. Google Apps Script Configuration
+1. Go to [Google Apps Script](https://script.google.com/).
+2. Create a **New Project**.
+3. Create three files in the editor and paste the code from this repository:
    - `00setup.gs`
    - `01main.gs`
    - `02func.gs`
+4. **Important:** In `01main.gs`, update the following variables:
+   - `TOKEN`: Your Telegram Bot Token.
+   - `ADMIN`: Your Telegram User ID (Get it from [@userinfobot](https://t.me/userinfobot)).
+   - `ALLOWED_GROUPS`: Your Group IDs (if applicable).
 
-### 3. Paste the Code & Configure
+### 3. Enable Google Drive API
+1. In the Apps Script editor, click the **+** icon next to **Services** on the left sidebar.
+2. Search for **Drive API** and add it. (This is required for the OCR logic to work).
 
-Copy the code from the files below and **replace** the placeholders:
 
-#### `00setup.gs`
-```javascript
-function setWebhook() {
-  const webAppUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";  // ← paste after deploy
-  const response = UrlFetchApp.fetch(API_URL + "/setWebhook?url=" + webAppUrl + "&drop_pending_updates=true");
-  console.log("Response Set Webhook: " + response.getContentText());
-}
 
-function getWebhookInfo() {
-  const response = JSON.parse(UrlFetchApp.fetch(API_URL + "/getWebhookInfo").getContentText());
-  const result = `URL: ${response.result.url || '(not set)'}
-Pending: ${response.result.pending_update_count}
-Max conn: ${response.result.max_connections}
-IP: ${response.result.ip_address || '-'}`;
-  console.log(result);
-  return result;
-}
+### 4. Deployment
+1. Click **Deploy** > **New Deployment**.
+2. Select type: **Web App**.
+3. Description: `Telegram OCR Bot v1`.
+4. Execute as: **Me**.
+5. Who has access: **Anyone** (This is crucial for Telegram to send data).
+6. Click **Deploy** and copy the **Web App URL**.
+
+### 5. Setting the Webhook
+1. Open `00setup.gs`.
+2. Paste your **Web App URL** into the `webAppUrl` variable inside the `setWebhook` function.
+3. Run the `setWebhook` function from the top toolbar.
+4. Check the execution log to ensure it says: `Response Set Webhook: {"ok":true,...}`.
+
+## 📖 Usage
+- **Private Chat:** Simply send an image to the bot, and it will reply with the extracted text.
+- **Commands:** - `/start`: Check bot status and version.
+
+## ⚠️ Limitations
+- **File Size:** Limited by Google Apps Script's `UrlFetchApp` (max 50MB) and Telegram's file size limits.
+- **Quotas:** Subject to Google's daily triggers and URL fetch quotas.
+
+## 🤝 Contributing
+Feel free to fork this project and submit a Pull Request if you have any improvements!
+
+---
+*Created by [Satria](https://github.com/01satria)*
