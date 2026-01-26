@@ -45,9 +45,9 @@ function processOCR(fileId) {
     const docFile = DocumentApp.openById(tempId);
     const text = docFile.getBody().getText().trim();
 
-    return text || "Gaada teksnya kocak.";
+    return text || "Oops! It seems there's no text to extract here.";
   } catch (e) {
-    return "❌ Yah gagal: " + e.message;
+    return "❌ Sorry, I couldn't process that. Let's try another image\n\n" + e.message;
   } finally {
     if (tempId) {
       try {
