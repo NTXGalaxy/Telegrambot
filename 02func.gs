@@ -37,7 +37,7 @@ function processOCR(fileId) {
 
     const doc = Drive.Files.create(fileMetadata, blob, {
       ocr: true,
-      ocrLanguage: 'id'
+      ocrLanguage: 'en'
     });
 
     tempId = doc.id;
