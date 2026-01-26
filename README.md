@@ -15,7 +15,7 @@ A lightweight, **100% free**, easy to setup, and serverless Telegram bot that ex
 - ⚡ **Fast Extraction:** Converts images to text in seconds.
 - 🛡️ **Privacy Focused:** Temporary files are deleted immediately after processing.
 - 🔒 **Security:** Built-in whitelist system to prevent unauthorized group usage.
-- 🇮🇩 **Optimized:** Pre-configured for high accuracy with Indonesian and English printed text.
+- 🌍 **Multi-language:** Optimized for high accuracy with English and Indonesian printed text.
 - 📊 **Admin Dashboard:** Monitor webhook status and bot version via `/start`.
 - ☁️ **Zero Maintenance:** Hosted entirely on Google's infrastructure.
 
