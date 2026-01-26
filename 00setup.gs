@@ -9,3 +9,15 @@ function getWebhookInfo() {
   const result = JSON.stringify(`URL: ${response.result.url}\nPending Update: ${response.result.pending_update_count}\nMax Connections: ${response.result.max_connections}\nIp: ${response.result.ip_address}`);
   return JSON.parse(result);
 }
+
+function triggerDrivePermissions() {
+  try {
+    const files = Drive.Files.list({
+      pageSize: 1,
+      fields: "files(id, name)"
+    });
+    Logger.log("Drive API v3 permission granted successfully!");    
+  } catch (e) {
+    Logger.log("Authorization Error: " + e.message);
+  }
+}
