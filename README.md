@@ -1,4 +1,4 @@
-# 🤖 Telegram OCR Bot (Serverless)
+# 🤖 Telegram OCR Bot (Serverless) - FREE!
 
 [![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://script.google.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
