@@ -47,8 +47,9 @@ A lightweight, **100% free**, easy to setup, and serverless Telegram bot that ex
 ### 3. Enable Services & Authorization
 1. Click the **+** (Plus) icon next to **Services** on the left sidebar.
 2. Find and add the **Drive API** (Select **v3**), then click **Add**.
-3. **Crucial Step:** To grant the script permission to access your Drive, select the `triggerDrivePermissions` function from the top toolbar in the editor and click **Run**. 
-4. Follow the Google authorization prompts (Click *Advanced > Go to [Project Name] (unsafe)* if warned).
+3. **Crucial Step:** To grant the script permission to access your Drive, Open `00setup.gs`.
+4. Select the `triggerDrivePermissions` function from the top toolbar in the editor and click **Run**. 
+5. Follow the Google authorization prompts (Click *Advanced > Go to [Project Name] (unsafe)* if warned).
 
 ### 4. Deployment
 1. Click **Deploy** > **New Deployment**.
