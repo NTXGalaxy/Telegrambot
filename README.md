@@ -4,7 +4,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-A lightweight, **100% free**, and serverless Telegram bot that extracts text from images (OCR). It can read receipts, ID cards, documents, and posters, returning clean, selectable text directly in your chat.
+A lightweight, **100% free**, easy to setup, and serverless Telegram bot that extracts text from images (OCR). It can read receipts, ID cards, documents, and posters, returning clean, selectable text directly in your chat.
 
 **No VPS, no database, and no paid APIs required.** Built with Google Apps Script and powered by the Google Drive OCR engine.
 
