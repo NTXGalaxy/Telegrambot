@@ -35,7 +35,7 @@ function doPost(e) {
     } else if (message.text) {
       const textInput = message.text.toLowerCase().trim();
 
-      if (textInput == "/start" && chatId == ADMIN || userId == ADMIN) {
+      if (textInput == "/start" && chatId == ADMIN || textInput == "/start" && userId == ADMIN) {
         sendText(chatId, `Hi Admin!\n\n${getWebhookInfo()}\n<pre>${VER}</pre>`);
 
       } else if (textInput == "/start") {
